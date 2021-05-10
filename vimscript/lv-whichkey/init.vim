@@ -1,5 +1,5 @@
 " Leader Key Maps
-
+;
 " Timeout
 let g:which_key_timeout = 100
 
@@ -30,6 +30,8 @@ let g:which_key_map['h'] = [ '<C-W>s'                                          ,
 let g:which_key_map['H'] = [ ':let @/ = ""'                                    , 'no highlight' ]
 let g:which_key_map['r'] = [ ':RnvimrToggle'                                   , 'ranger' ]
 " TODO create entire treesitter section
+let g:nvim_tree_hide_dotfiles = 0
+
 let g:which_key_map['v'] = [ '<C-W>v'                                          , 'split right']
 " TODO play nice with status line
 
@@ -99,7 +101,7 @@ let g:which_key_map.S = {
       \ 'l' : [':SessionLoad'           , 'load Session'],
       \ }
 
-" g is for git
+" g is for git , yess
 let g:which_key_map.g = {
       \ 'name' : '+git' ,
       \ 'b' : [':GitBlameToggle'                   , 'blame'],
@@ -135,6 +137,12 @@ let g:which_key_map.l = {
       \ 'x' : [':cclose'                             , 'close quickfix'],
       \ 's' : [':Telescope lsp_document_symbols'     , 'document symbols'],
       \ 'S' : [':Telescope lsp_workspace_symbols'    , 'workspace symbols'],
+      \ }
+
+" t is for terminal
+let g:which_key_map.t = {
+      \ 'name' : 'terminal' ,
+      \ 't' : [':terminal'                , 'open term below'],
       \ }
 
 call which_key#register('<Space>', "g:which_key_map")
